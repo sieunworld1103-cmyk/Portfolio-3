@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+
+/* pc버전 */
+@media(max-width:1290px) {
+
+  /* container */
+  .container {
+    width: 100%;
+  }
+
+  /* footer */
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer .f_logo {
+    margin: 0;
+  }
+
+  .footer .f_copy {
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 0;
+  }
+}
+
+
+@media(max-width:1280px) {
+
+  /* banner */
+  .spots>li {
+  font-size: 27px;
+  }
+
+}
+
+
+@media(max-width:1100px) {
+
+  /* barmenu */
+  #barMenu {
+    right: 20px;
+  }
+
+  /* banner */
+  .spots>li {
+  font-size: 26px;
+  }
+
+  /* contents1 */
+  .cont1_rigth p {
+    font-size: 2.5vw;
+  }
+
+  /* top */
+  #content3 a.secBtn {
+    width: 43px;
+    height: 43px;
+    font-size: 23px;
+    line-height: 38px;
+  }
+}
+
+
+/* 노트북 */
+@media(max-width:1024px) {
+
+  /* contents4 */
+  :root {
+    --roadW: 58;
+    --dashOn: 22;
+    --dashOff: 16;
+    --pinR: 8;
+    --scene-rotate: -3deg;
+    --scene-tx: 28px;
+  }
+}
+
+
+/* 노트북 */
+@media(max-width:960px) {
+
+  /* header */
+  .accordion_header {
+    font-size: 1rem;
+  }
+
+  .accordion_content p {
+    font-size: 0.9rem;
+  }
+
+  /* .contents2 */
+  .chart_box h2 {
+    font-size: 2rem;
+  }
+
+  .chart_box {
+    height: 400px;
+  }
+
+  /* contents3 */
+  element.style {
+    left: 473.396px;
+  }
+}
+
+
+@media(max-width:870px) {
+
+  /* footer */
+  .footer .f_copy {
+    font-size: 17px;
+  }
+
+  .footer .f_copy span {
+    display: none;
+  }
+
+  /* top */
+  #content3 a.secBtn {
+    bottom: 15px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+  }
+
+}
+
+/* 태블릿 */
+@media(max-width:800px) {
+
+  .wrap {
+    flex-direction: column;
+  }
+
+  .cont1_tit {
+    margin-bottom: 30px;
+  }
+
+  .cont1_left {
+    width: 40%;
+  }
+
+  .cont1_rigth {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cont1_rigth p {
+    color: #444;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+
+  /* contents3 */
+  element.style {
+    left: 390.314px;
+  }
+}
+
+
+/* 태블릿 */
+@media(max-width:768px) {
+
+  /* .contents2 */
+  .chart_box h2 {
+    font-size: 1.5rem;
+  }
+
+  .accordion_header {
+    font-size: 0.8rem;
+  }
+
+  .accordion_content p {
+    font-size: 0.7rem;
+  }
+
+  /* contents4 */
+  :root {
+    --roadW: 52;
+    --dashOn: 20;
+    --dashOff: 14;
+    --pinR: 7.5;
+    --scene-rotate: -2deg;
+    --scene-tx: 16px;
+  }
+
+}
+
+@media(max-width:768px) {
+
+  /* footer */
+  .footer .f_copy {
+    font-size: 15px;
+  }
+}
+
+@media(max-width:660px) {
+
+  /* header */
+  #openModalBtn {
+    display: none;
+  }
+
+  .header .logo {
+    margin: 0;
+  }
+
+  /* contents1 */
+  .cont1_rigth {
+    width: 60%;
+  }
+
+  .cont1_rigth p {
+    font-size: 2.7vw;
+  }
+}
+
+/* 핸드폰 */
+@media(max-width:600px) {
+
+  /* header */
+  .accordion {
+    margin-top: 100px;
+  }
+
+  .accordion_header {
+    font-size: 0.7rem;
+  }
+
+  .accordion_content p {
+    font-size: 0.7rem;
+  }
+
+  /* content1 */
+  .cont1_tit {
+    font-size: 1.3rem;
+  }
+
+  .cont1_rigth p {
+    font-size: 2.9vw;
+  }
+
+  /* .contents2 */
+  .chart_box h2 {
+    font-size: 1.3rem;
+  }
+
+  .chart_box {
+    height: 300px;
+  }
+
+  /* contents3 */
+  .title {
+    font-size: 1.3rem;
+
+  }
+
+  circle {
+    r: 20;
+    fill: rgb(204, 13, 16);
+  }
+
+  /* top */
+  #content3 a.secBtn {
+    display: none;
+  }
+}
+
+
+/* 핸드폰 */
+@media(max-width:480px) {
+
+  /* header */
+  #barMenu>.bar {
+    height: 2.3px;
+  }
+
+  #barMenu>.bar::after {
+    height: 2.3px;
+  }
+
+  #barMenu>.bar::before {
+    height: 2.3px;
+  }
+
+  /* contents1 */
+  .cont1_rigth p {
+    font-size: 3.2vw;
+  }
+
+  /* .contents2 */
+  .chart_box {
+    height: 300px;
+  }
+
+  .contents2 {
+    padding: 0 30px;
+  }
+
+  /* contents3 */
+  element.style {
+    left: 285.237px;
+  }
+
+  .bubble {
+    padding: 5px 5px;
+  }
+
+  .bubble p {
+    font-size: 13px;
+  }
+
+  :root {
+    --roadW: 46;
+    --dashOn: 18;
+    --dashOff: 12;
+    --pinR: 7;
+    --scene-rotate: -1deg;
+    --scene-tx: 8px;
+  }
+
+  /* footer */
+  .footer .f_copy {
+    font-size: 13px;
+  }
+}
+
+@media(max-width:480px) {
+
+  /* .contents2 */
+  .chart_box {
+    height: 250px;
+  }
+
+  /* footer */
+  .footer .f_copy {
+    font-size: 11px;
+  }
+}
+
+/* 핸드폰 */
+@media(max-width:320px) {}

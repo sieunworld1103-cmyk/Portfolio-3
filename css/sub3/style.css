@@ -1,0 +1,566 @@
+@charset "utf-8";
+
+/* layout */
+body,html{
+    overflow-x: hidden;
+    font-family: 'GounBatang';
+}
+
+p.title {
+    text-align: center;
+    font-family: 'GounBatangBold';
+    font-size: clamp(12px, 3.5vw, 35px);
+    padding: 3vw 0;
+}
+
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EDF6FC;
+}
+
+#contents1 {
+    margin-top: 5.2083vw;
+}
+
+#banner {
+    margin-top: 100px;
+}
+
+#contents2 {}
+
+#contents3 {
+    background-color: #ECECEC;
+    margin-top: 150px;
+}
+
+#footer {
+    width: 100%;
+    height: 20.83vw;
+    background-color: #2C519D;
+}
+
+/* container */
+.container {
+    width: 1280px;
+    height: inherit;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+/* header */
+.header {
+    height: inherit;
+    position: relative;
+}
+
+.header .logo {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 100px;
+    font-family: 'GounBatangBold';
+    letter-spacing: 2.5px;
+    font-size: clamp(32px, 3.125vw, 72px);
+    font-weight: 400;
+}
+
+.header .logo a {
+    color: #555;
+}
+
+/* 로그인/회원가입 버튼 */
+#openModalBtn {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 18px;
+    font-family: 'GounBatang';
+    cursor: pointer;
+    color: #333;
+}
+
+/* 모달 배경 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 초기 상태: 보이게 */
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+    z-index: 1000;
+}
+
+/* 숨김 처리 (트랜지션 적용 가능하도록 수정) */
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+}
+
+/* 모달 내부 콘텐츠 박스 */
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 90%;
+
+    /* 아래로 내려오는 효과 (옵션) */
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* 모달이 숨겨질 때 콘텐츠 위치 위로 이동 */
+.modal.hidden .modal-content {
+    transform: translateY(-30px);
+}
+
+/* 제목 */
+.modal-content h2 {
+    font-family: 'GounBatangBold';
+}
+
+/* 폼 전체 마진 */
+.modal-content form {
+    margin-top: 30px;
+}
+
+/* 기본 div: 라벨 + 인풋 가로 정렬 */
+.modal-content form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 라벨 스타일 */
+.modal-content form label {
+    width: 80px;
+    margin-right: 10px;
+    font-family: 'GounBatang';
+}
+
+/* 인풋 공통 스타일 */
+.modal-content form input {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* 비밀번호 행: 라벨과 인풋 가로 정렬 */
+.password-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 로그인 버튼은 비밀번호 div 밖으로 빼는 구조에 맞춤 */
+button[type="submit"] {
+    width: 100%;
+    height: 35px;
+    font-family: 'GounBatang';
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 닫기 버튼 (X) */
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* 하단 메뉴 리스트 */
+.modal-content ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.modal-content ul li {
+    position: relative;
+    padding: 0 10px;
+}
+
+/* 메뉴 항목 사이 구분선 */
+.modal-content ul li::after {
+    content: "";
+    width: 1px;
+    height: 16px;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    background-color: #5e5e5e;
+}
+
+.modal-content ul li:first-child::after {
+    content: none;
+}
+
+.modal-content ul li a {
+    font-family: 'GounBatang';
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+#barMenu {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 35px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#barMenu>.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #666;
+    position: relative;
+    border-radius: 500px;
+}
+
+#barMenu>.bar::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background-color: #666;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transition: all 0.3s;
+    border-radius: 500px;
+}
+
+#barMenu:hover>.bar::after {
+    width: 100%;
+}
+
+#barMenu>.bar::before {
+    content: "";
+    width: 60%;
+    height: 3px;
+    background-color: #666;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    transition: all 0.3s;
+    border-radius: 500px;
+}
+
+#barMenu:hover>.bar::before {
+    width: 100%;
+}
+
+.header .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: auto;
+    background-color: white;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.header .nav.open {
+    right: 0;
+}
+
+.header .nav>ul {
+    padding-top: 80px;
+}
+
+.header .nav>ul>li {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 15px 0;
+}
+
+.header .nav>ul>li>a {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'GounBatangBold';
+}
+
+.header .nav ul li .submenu {
+    top: auto;
+    left: auto;
+    width: 100%;
+    background-color: #f8f8f8;
+    display: none;
+    padding-left: 20px;
+}
+
+.header .nav ul li .submenu li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.header .nav ul li .submenu li:last-child {
+    border-bottom: none;
+}
+
+.header .nav ul li .submenu li a {
+    display: block;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    font-family: 'GounBatang';
+}
+
+/* 오버레이 (기본적으로 숨김) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.473); /* 반투명 검정 배경 */
+  z-index: 998; /* nav보다 아래 */
+  display: none;
+}
+
+/* contents1 */
+#contents1 .container {
+    padding: 0 50px;
+    background-color: #ECECEC;
+}
+
+.contents1 {
+    padding-bottom: 4.6875vw;
+}
+
+
+.contents1>ul {
+    aspect-ratio: 4 / 1;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.contents1>ul>li {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    margin-right: 4%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    scroll-snap-align: start;
+}
+
+.contents1>ul>li:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+        0 6px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.contents1>ul>li:last-child {
+    margin-right: 0;
+}
+
+.contents1>ul>li>a {}
+
+.contents1>ul>li>a>img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.contents1>ul::-webkit-scrollbar {
+    width: 12px;
+}
+
+.contents1>ul::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.contents1>ul::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+}
+
+.contents1>ul::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* banner */
+.banner {
+    padding: 50px 0;
+    margin-bottom: 100px;
+}
+
+.banner>a {}
+
+.banner>a>img {
+    width: 100%;
+}
+
+.banner>a>img.suicidePrevBanner-1280px {
+    display: none;
+}
+
+/* contents2------ */
+.contents2 {
+    margin-top: 100px;
+    position: relative;
+}
+
+.contents2 .slick-arrow {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    width: 60px;
+    height: 100%;
+    text-indent: -99999px;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    border: none;
+}
+
+.contents2 .slick-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.contents2 .slick-arrow img {
+    width: 100%;
+}
+
+.contents2 .slick-prev {
+    left: 0;
+    top: 0;
+}
+
+.contents2 .slick-prev img {
+    transform: scaleX(-1);
+}
+
+.contents2 .slick-next {
+    right: 0;
+    top: 0;
+}
+
+.contents2 .slick-dots {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 50px;
+}
+
+.contents2 .slick-dots {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 50px;
+}
+
+
+
+
+
+/* contents3------ */
+.contents3 {
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.contents3 .YouTube {
+    display: flex;
+}
+
+.contents3 .YouTube .YouTubeVideo {
+    height: 18.75vw;
+    aspect-ratio: 16 / 9;
+}
+
+.contents3 .YouTube .infoText {
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.contents3 .YouTube .infoText>.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50%;
+}
+
+.contents3 .YouTube .infoText>.title>img {
+    width: clamp(12px, 4vw, 50px);
+}
+
+.contents3 .YouTube .infoText>.title>span {
+    font-size: clamp(18px, 2.08vw, 30px);
+}
+
+.contents3 .YouTube .infoText>p {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    font-size: clamp(13px, 1.5vw, 24px);
+}
+
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.footer .f_logo {
+    width: 22vw;
+    height: 8vw;
+    margin: 0 auto;
+}
+
+.footer .f_logo a {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .f_logo a img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .f_copy {
+    color: white;
+    text-align: center;
+    line-height: 2;
+    margin-top: 30px;
+    font-size: clamp(13px, 0.8vw, 18px);
+}
+
+.footer .f_copy span {}

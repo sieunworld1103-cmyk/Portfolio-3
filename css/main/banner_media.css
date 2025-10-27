@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+@media(max-width:1600px) {
+    .spots>li:nth-of-type(5) {
+        left: 69vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 70vw;
+    }
+}
+
+@media(max-width:1440px) {
+    .spots>li:nth-of-type(5) {
+        left: 67vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 68vw;
+    }
+
+    .spots>li:nth-of-type(13) {
+        left: 67vw;
+    }
+}
+
+@media(max-width:1200px) {
+    .spots>li:nth-of-type(5) {
+        left: 63vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 65vw;
+    }
+
+    .spots>li:nth-of-type(15) {
+        left: 63vw;
+    }
+
+    .spots>li:nth-of-type(18) {
+        left: 66vw;
+    }
+}
+
+/* 노트북 */
+@media(max-width:1024px) {
+    .spots>li {
+        font-size: 24px;
+    }
+}
+
+@media(max-width:960px) {
+    .spots>li {
+        font-size: 22px;
+    }
+
+    .spots>li:nth-of-type(5) {
+        left: 60vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 63vw;
+    }
+
+    .spots>li:nth-of-type(9) {
+        left: 48vw;
+    }
+
+    .spots>li:nth-of-type(13) {
+        left: 60vw;
+    }
+
+    .spots>li:nth-of-type(15) {
+        left: 50vw;
+    }
+}
+
+@media(max-width:800px) {
+
+    /* banner */
+    .stage {
+        height: 80vh;
+    }
+
+    .spots>li {
+        font-size: 22px;
+    }
+
+    #banner {
+        margin-bottom: 90px;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 55vw;
+    }
+
+    .spots>li:nth-of-type(9) {
+        left: 40vw;
+    }
+
+    .spots>li:nth-of-type(18) {
+        left: 58vw;
+    }
+}
+
+@media(max-width:768px) {
+    .spots>li {
+        font-size: 20px;
+    }
+
+    .spots>li:nth-of-type(5) {
+        left: 54vw;
+    }
+
+
+    .spots>li:nth-of-type(2) {
+        top: 64.8%;
+    }
+
+    .spots>li:nth-of-type(6) {
+        top: 87.4%;
+    }
+
+    .spots>li:nth-of-type(7) {
+        top: 59%;
+    }
+
+    .spots>li:nth-of-type(8) {
+        top: 56%;
+    }
+
+    .spots>li:nth-of-type(9) {
+        top: 34.81%;
+    }
+
+
+    .spots>li:nth-of-type(11) {
+        top: 29%;
+    }
+
+    .spots>li:nth-of-type(13) {
+        top: 47.1%;
+    }
+
+    .spots>li:nth-of-type(14) {
+        top: 90%;
+    }
+
+    .spots>li:nth-of-type(17) {
+        top: 66.8%;
+    }
+    
+    .spots>li:nth-of-type(20) {
+        top: 11.2%;
+    }
+
+}
+
+@media(max-width:600px) {
+    #banner {
+        margin-bottom: 80px;
+    }
+
+    .spots>li {
+        font-size: 19px;
+    }
+
+    .stage {
+        height: 60vh;
+    }
+
+    .spots>li:nth-of-type(5) {
+        left: 44vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 45vw;
+    }
+
+    .spots>li:nth-of-type(9) {
+        left: 10vw;
+    }
+
+    .spots>li:nth-of-type(10) {
+        left: 40vw;
+    }
+
+
+    .spots>li:nth-of-type(13) {
+        left: 50vw;
+    }
+
+    .spots>li:nth-of-type(18) {
+        left: 43vw;
+    }
+}
+
+
+@media(max-width:525px) {
+    .spots>li:nth-of-type(2) {
+        left: 31vw;
+    }
+
+    .spots>li:nth-of-type(15) {
+        left: 34vw;
+    }
+}
+
+@media(max-width:480px) {
+    #banner {
+        margin-bottom: 50px;
+    }
+
+    .spots>li {
+        font-size: 18px;
+    }
+
+    .stage {
+        height: 50vh;
+    }
+
+    .spots>li:nth-of-type(5) {
+        left: 33vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 32vw;
+    }
+
+    .spots>li:nth-of-type(13) {
+        left: 36vw;
+    }
+}
+
+@media(max-width:425px) {
+    .spots>li:nth-of-type(1) {
+        left: 10vw;
+    }
+
+    .spots>li:nth-of-type(2) {
+        left: 5vw;
+    }
+
+    .spots>li:nth-of-type(5) {
+        left: 12vw;
+    }
+
+    .spots>li:nth-of-type(10) {
+        left: 32vw;
+    }
+
+    .spots>li:nth-of-type(14) {
+        left: 24vw;
+    }
+
+    .spots>li:nth-of-type(15) {
+        left: 24vw;
+    }
+
+    .spots>li:nth-of-type(18) {
+        left: 32vw;
+    }
+
+}
+
+@media(max-width:360px) {
+    .spots>li {
+        font-size: 17px;
+    }
+
+    .final-banner .final-text {
+        font-size: 15px;
+    }
+
+    .spots>li:nth-of-type(3) {
+        left: 16vw;
+    }
+
+    .spots>li:nth-of-type(7) {
+        left: 16vw;
+    }
+
+    .spots>li:nth-of-type(9) {
+        left: 0;
+    }
+
+    .spots>li:nth-of-type(10) {
+        left: 24vw;
+    }
+
+    .spots>li:nth-of-type(12) {
+        left: 24vw;
+    }
+
+    .spots>li:nth-of-type(13) {
+        left: 32vw;
+    }
+}

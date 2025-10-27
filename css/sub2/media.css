@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+/* pc버전 */
+@media(max-width:1290px){
+  .container{
+    width: 100%;
+  }
+  /* footer */
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer .f_logo {
+      margin: 0;
+  }
+
+  .footer .f_copy {
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin-top: 0;
+  }
+}
+
+@media(max-width:1100px) {
+
+  /* barmenu */
+  #barMenu {
+    right: 20px;
+  }
+}
+
+/* 노트북 */
+@media(max-width:1024px){
+  /* middle */
+  .result-description .score-range {
+    font-size: 19px;
+  }
+}
+
+/* 노트북 */
+@media(max-width:960px){
+  .start_page img{
+    width: 70%;
+  }
+  .start_page p:first-of-type{
+    font-size: 23px;
+  }
+  .start_page p:nth-of-type(2){
+      font-size: 18px;
+  }
+  .start_page .start_btn{
+    font-size: 14px;
+  }
+}
+
+@media(max-width:870px) {
+  /* footer */
+  .footer .f_copy span {
+      display: none;
+  }
+
+}
+
+/* 태블릿 */
+@media(max-width:768px){
+  .start_page img{
+    width: 80%;
+  }
+  .start_page p:first-of-type{
+    font-size: 21px;
+  }
+  .start_page p:nth-of-type(2){
+      font-size: 16px;
+  }
+}
+
+@media(max-width:660px) {
+  /* header */
+  #openModalBtn {
+      display: none;
+  }
+
+  .header .logo {
+      margin: 0;
+  }
+
+  .content h1{
+    font-size: 27px;
+  }
+
+  /* start */
+  .start_page img{
+    width: 90%;
+  }
+  .rating-text {
+    font-size: 15px;
+  }
+}
+
+/* 핸드폰 */
+@media(max-width:600px){
+
+  /* header */
+    .accordion {
+    margin-top: 100px;
+  }
+
+  .accordion_header {
+    font-size: 0.7rem;
+  }
+
+  .accordion_content p {
+    font-size: 0.7rem;
+  }
+
+
+  .sub2_bar{
+    gap: 20px;
+  }
+  /* end */
+  .result_title{
+    font-size: 3.3vw;
+  }
+  .result-description .score-range {
+    font-size: 18px;
+  }
+  .result-quote{
+    font-size: 20px;
+  }
+}
+
+@media(max-width:515px){
+  .result_score_label{
+    width: 20%;
+  }
+  .result-description .score-range {
+    font-size: 17px;
+  }
+  .result-quote{
+    font-size: 3.6vw;
+  }
+}
+
+/* 핸드폰 */
+@media(max-width:480px){
+
+  /* header */
+   #barMenu>.bar {
+    height: 2.3px;
+  }
+
+  #barMenu>.bar::after {
+    height: 2.3px;
+  }
+
+  #barMenu>.bar::before {
+    height: 2.3px;
+  }
+
+  /* start */
+  .dot{
+    width: 23px;
+    height: 23px;
+  }
+  .start_page p:nth-of-type(2){
+    line-height: 2;
+  }
+  /* middle */
+  .question_text {
+    font-size: 18px;
+  }
+  /* end */
+  .result_title{
+    font-size: 16px;
+  }
+}
+
+@media(max-width:420px){
+
+  .content h1{
+    font-size: 25px;
+  }
+
+  .sub2_bar{
+    gap: 8px;
+    padding: 50px 10px;
+  }
+
+  .dot{
+    width: 21px;
+    height: 21px;
+  }
+
+  .start_page p:first-of-type{
+    font-size: 19px;
+  }
+
+  /* middle */
+  .rating-option {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+  .rating-text {
+    font-size: 14px;
+  }
+  
+  /* end */
+  .result_score_label{
+    width: 22%;
+    padding-left: 15px;
+  }
+  
+  .result-quote{
+    font-size: 15px;
+  }
+  
+}
+
+@media(max-width:370px){
+  .content h1{
+    font-size: 24px;
+  }
+  .start_page p:first-of-type{
+    font-size: 16px;
+  }
+  .start_page p:nth-of-type(2){
+    font-size: 15px;
+  }
+}
+
+/* 핸드폰 */
+@media(max-width:320px){}

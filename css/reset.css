@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* 폰트 */
+@import url('//fonts.googleapis.com/earlyaccess/hanna.css');
+@font-face {
+    font-family: 'GounBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GounBatangBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+.hanna{
+    font-family: "hanna";
+}
+.goun{
+    font-family: 'GounBatang';
+}
+.gounBold{
+    font-family: 'GounBatangBold';
+}
+
+/* 여백 초기화 */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 블릿기호 초기화 */
+ul, ol, li{list-style: none;}
+
+/* a 링크 초기화 */
+a{text-decoration: none; color: #333;}
+
+/* 이미지 블럭화 */
+img{display: block;}
+
+/* 폰트 스타일 초기화 */
+em{font-style: normal;}
+
+/* clearfix */
+.clearfix::before, .clearfix::after {
+    display: block; 
+    content: '';
+    clear: both;
+}
+
+/* IR 효과 */
+.ir_pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;} /* 의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method) */
+.ir_wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;} /* 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 때(WA IR) */
+.ir_su {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;} /* 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 */

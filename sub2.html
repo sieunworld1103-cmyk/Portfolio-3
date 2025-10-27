@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/sub2/style.css">
+    <link rel="stylesheet" href="./css/sub2/media.css">
+</head>
+
+<body>
+    <header id="header">
+        <header class="header">
+            <h1 class="logo"><a href="index.html">LUMINA</a></h1>
+            <button id="openModalBtn">로그인 / 회원가입</button>
+
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close">&times;</span>
+                    <h2>로그인</h2>
+                    <form>
+                        <div>
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" required />
+                        </div>
+                        <div class="password-row">
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" required />
+                        </div>
+                        <button type="submit">로그인</button>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">아이디 찾기</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">비밀번호 찾기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="barMenu">
+                <div class="bar"></div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./sub3.html">정보 & 자료실</a>
+                        <ul class="submenu">
+                            <li><a href="./sub3.html">정보 & 자료실</a></li>
+                            <li><a href="./sub3.html">자가관리 가이드</a></li>
+                            <li><a href="./sub3.html">전문기관 링크</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub2.html">우울 척도검사</a>
+                        <ul class="submenu">
+                            <li><a href="./sub2.html">우울 척도검사</a></li>
+                            <li><a href="./sub2.html">상세 우울검사</a></li>
+                            <li><a href="./sub2.html">검사 해석 가이드</a></li>
+                            <li><a href="./sub2.html">결과 기반 도움찾기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub1.html">사연작성</a>
+                        <ul class="submenu">
+                            <li><a href="./sub1.html">사연작성</a></li>
+                            <li><a href="./sub1.html">사연 모아보기</a></li>
+                            <li><a href="./sub1.html">전문가의 답장</a></li>
+                            <li><a href="./sub1.html">응원 메시지 남기기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub4.html">커뮤니티 & 참여</a>
+                        <ul class="submenu">
+                            <li><a href="./sub4.html">온라인 교육 과정</a></li>
+                            <li><a href="./sub4.html">FAQ</a></li>
+                            <li><a href="./sub4.html">홍보 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </header>
+    </header>
+    <div id="content">
+        <div class="container">
+            <div class="content">
+                <h1 class="title goun">우울척도 검사</h1>
+                <!-- 진행 가이드 -->
+                <div class="rating-guide" id="ratingGuide" style="display: none;">
+                    <div class="rating-text">1: 전혀 그렇지 않다</div>
+                    <div class="rating-text">5: 매우 그렇다</div>
+                </div>
+                <!-- 시작페이지 -->
+                <div class="sub2_bar">
+                    <div class="dot active" id="dot1"></div>
+                    <div class="line"></div>
+                    <div class="dot" id="dot2"></div>
+                    <div class="line"></div>
+                    <div class="dot" id="dot3"></div>
+                </div>
+                <div class="start_page" id="startPage">
+                    <img src="./sub2_img/doctor.png" alt="doctor_img">
+                    <p class="goun">지난 일주일간 당신의 상태에 관한 질문입니다.</p>
+                    <p class="goun">이 검사는 의학적인 진단을 위한 것이 아니며, <br>정확한 검사는 의료기관에서 받으셔야 합니다.</p>
+                    <button class="start_btn " onclick="startTest()">검사시작</button>
+                </div>
+                <!-- 질문 페이지 -->
+                <div class="question_page goun" id="questionPage">
+                    <div id="questionsContainer"></div>
+                    <button class="submit-btn" id="submitBtn" onclick="showResults()">진단 검사 결과보기</button>
+                </div>
+                <!-- 결과 페이지 -->
+                <div class="result-page" id="resultPage">
+                    <div class="result_title goun">진단 결과는 전문가에 의한 진단 만큼 정확하지 않습니다.</div>
+
+                    <div class="result_score_container">
+                        <div class="result_score_label goun">점수</div>
+                        <div class="result_score goun" id="resultScore">12/30점 만점</div>
+                    </div>
+                    <div class="result-description goun" id="resultDescription">
+                        <div class="score-range">0점 ~ 15점 : 편안한 상태입니다. 지속적으로 정신건강에 관심을 갖고 예방을 위해 노력해 정기검사도 잊지 마세요.</div>
+                        <div class="score-range">16점 ~ 24점 : 가벼운 우울감을 겪고 있는 상태입니다. 우울증 예방을 위해 운동, 여가활동, 대인관계 맺기 등 즐거움을
+                            주는 활동을 적극적으로 참여해보세요.</div>
+                        <div class="score-range">25점 이상 : 다양한 우울증상으로 일상생활에 영향을 주고 있는 상태입니다. 이러한 상태가 2주 이상 지속된다면 전문가와의
+                            상담을 반드시 받아보세요.</div>
+                    </div>
+
+                    <div class="result-quote gounBold">
+                        "여기가 너의 어둠이라면 손잡아 거기서 꺼내 줄게"
+                    </div>
+
+                    <button class="restart-btn goun" onclick="restartTest()">다시 검사하기</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="container">
+            <footer class="footer">
+                <div class="f_logo">
+                    <a href="./index.html"><img src="./main_img/sieun/footer_logo.png" alt="푸터 로고 이미지"></a>
+                </div>
+                <div class="f_copy">
+                    Copyright &copy; 2025 Lumina. All rights reserved.<br>
+                    <span>
+                        당신의 삶은 소중합니다.<br>
+                        본 사이트는 개인용 포트폴리오 작품으로, 상업적 용도로 절대 사용되지 않습니다.<br>
+                        이미지 출처 : LottieFiles, 대덕구정신건강복지센터, 보건복지부, 1393, 한국생명의전화
+                    </span>
+                </div>
+            </footer>
+        </div><!-- //.container -->
+    </footer>
+
+    <!-- 제이쿼리 연결 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //헤더
+        // 헤더 로그인 버튼 눌렀을 때 모듈창
+        const $modal = $("#modal");
+        const $openModalBtn = $("#openModalBtn");
+        const $closeModalBtn = $("#closeModalBtn");
+
+        $openModalBtn.on("click", function () {
+            $modal.removeClass("hidden");
+        });
+
+        $closeModalBtn.on("click", function () {
+            $modal.addClass("hidden");
+        });
+
+        $(window).on("click", function (e) {
+            if (e.target === $modal[0]) {
+                $modal.addClass("hidden");
+            }
+        });
+
+        //햄버거 메뉴를 클릭했을 때 나왔다가 들어가는 이벤트
+        $("#barMenu").click(function () {
+            $(".nav .submenu").hide(); // 초기화
+            $(".header .nav").toggleClass("open");
+
+            if ($(".header .nav").hasClass("open")) {
+                $("body").css("overflow", "hidden");
+                $(".overlay").fadeIn();
+            } else {
+                $("body").css("overflow", "auto");
+                $(".overlay").fadeOut();
+            }
+        });
+
+        // 서브메뉴가 있는 li 클릭 시 서브메뉴 토글
+        $(".nav > ul > li > a").click(function (e) {
+            e.preventDefault(); // 링크 이동 막기 (필요시)
+            const submenu = $(this).siblings(".submenu");
+            if (submenu.is(":visible")) {
+                submenu.slideUp();
+            } else {
+                $(".nav .submenu").slideUp(); // 다른 서브메뉴 닫기
+                submenu.slideDown();
+            }
+        });
+
+        // cont
+        // 검사 데이터
+        const questions = [
+            "1. 아무것도 하기 싫고, 의욕이 없다.",
+            "2. 내가 하는 일에 마음을 집중하기가 어려웠다.",
+            "3. 죽고 싶거나 자신을 해치고 싶다는 생각이 든다.",
+            "4. 기분이 우울하다.",
+            "5. 주위 사람들이 나를 싫어한다는 생각이 들었다.",
+            "6. 내가 하고자 하는 일 모두가 어렵게 느껴졌다."
+        ];
+        let currentStep = 1; // 1: 시작, 2: 검사, 3: 결과
+        let answers = [];
+
+        // 진행 표시기 업데이트
+        function updateProgressBar() {
+            const dots = ['dot1', 'dot2', 'dot3'];
+            dots.forEach((dotId, index) => {
+                const dot = document.getElementById(dotId);
+                if (index + 1 <= currentStep) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        // 검사 시작
+        function startTest() {
+            currentStep = 2;
+            answers = new Array(questions.length).fill(null);
+
+            updateProgressBar();
+            showQuestionPage();
+            loadAllQuestions();
+        }
+        // 질문 페이지 표시
+        function showQuestionPage() {
+            document.getElementById('startPage').style.display = 'none';
+            document.getElementById('questionPage').style.display = 'block';
+            document.getElementById('resultPage').style.display = 'none';
+            document.getElementById('ratingGuide').style.display = 'flex';
+        }
+        // 모든 질문 로드
+        function loadAllQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-item';
+                questionDiv.innerHTML = `
+                    <div class="question_text">${question}</div>
+                    <div class="rating-container">
+                        <div class="rating-options">
+                            <button class="rating-option" data-question="${index}" data-value="1">1</button>
+                            <button class="rating-option" data-question="${index}" data-value="2">2</button>
+                            <button class="rating-option" data-question="${index}" data-value="3">3</button>
+                            <button class="rating-option" data-question="${index}" data-value="4">4</button>
+                            <button class="rating-option" data-question="${index}" data-value="5">5</button>
+                        </div>
+                        <div class="rating-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            // 모든 평점 버튼에 이벤트 리스너 추가
+            const ratingButtons = document.querySelectorAll('.rating-option');
+            ratingButtons.forEach(btn => {
+                btn.onclick = () => selectRating(btn);
+            });
+
+            updateSubmitButton();
+        }
+
+        // 평점 선택
+        function selectRating(button) {
+            const questionIndex = parseInt(button.dataset.question);
+            const value = parseInt(button.dataset.value);
+
+            // 같은 질문의 다른 버튼들 선택 해제
+            const questionButtons = document.querySelectorAll(`[data-question="${questionIndex}"]`);
+            questionButtons.forEach(btn => btn.classList.remove('selected'));
+
+            // 선택된 버튼 활성화
+            button.classList.add('selected');
+            answers[questionIndex] = value;
+
+            updateSubmitButton();
+        }
+
+        // 제출 버튼 상태 업데이트
+        function updateSubmitButton() {
+            const submitBtn = document.getElementById('submitBtn');
+            const allAnswered = answers.every(answer => answer !== null);
+
+            if (allAnswered) {
+                submitBtn.classList.add('active');
+            } else {
+                submitBtn.classList.remove('active');
+            }
+        }
+
+        // 결과 표시 (합계 점수로 변경)
+        function showResults() {
+            const allAnswered = answers.every(answer => answer !== null);
+            if (!allAnswered) return;
+
+            currentStep = 3;
+            updateProgressBar();
+
+            // 점수 합계 계산
+            const totalScore = answers.reduce((sum, score) => sum + score, 0);
+
+            document.getElementById('startPage').style.display = 'none';
+            document.getElementById('questionPage').style.display = 'none';
+            document.getElementById('resultPage').style.display = 'block';
+            document.getElementById('ratingGuide').style.display = 'none';
+
+            // 결과 점수를 합계로 표시
+            document.getElementById('resultScore').textContent = totalScore + '/30점 만점';
+        }
+
+        // 검사 재시작
+        function restartTest() {
+            currentStep = 1;
+            answers = [];
+
+            updateProgressBar();
+
+            document.getElementById('startPage').style.display = 'flex';
+            document.getElementById('questionPage').style.display = 'none';
+            document.getElementById('resultPage').style.display = 'none';
+            document.getElementById('ratingGuide').style.display = 'none';
+
+            // 질문 컨테이너 초기화
+            const questionsContainer = document.getElementById('questionsContainer');
+            if (questionsContainer) {
+                questionsContainer.innerHTML = '';
+            }
+        }
+
+        // 초기화
+        updateProgressBar();
+    </script>
+</body>
+
+</html>

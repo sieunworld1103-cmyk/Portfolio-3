@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/sub3/style.css">
+    <link rel="stylesheet" href="./css/sub3/media.css">
+</head>
+
+<body>
+    <header id="header">
+        <header class="header">
+            <h1 class="logo"><a href="index.html">LUMINA</a></h1>
+            <button id="openModalBtn">로그인 / 회원가입</button>
+
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close">&times;</span>
+                    <h2>로그인</h2>
+                    <form>
+                        <div>
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" required />
+                        </div>
+                        <div class="password-row">
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" required />
+                        </div>
+                        <button type="submit">로그인</button>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">아이디 찾기</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">비밀번호 찾기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="barMenu">
+                <div class="bar"></div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./sub3.html">정보 & 자료실</a>
+                        <ul class="submenu">
+                            <li><a href="./sub3.html">정보 & 자료실</a></li>
+                            <li><a href="./sub3.html">자가관리 가이드</a></li>
+                            <li><a href="./sub3.html">전문기관 링크</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub2.html">우울 척도검사</a>
+                        <ul class="submenu">
+                            <li><a href="./sub2.html">우울 척도검사</a></li>
+                            <li><a href="./sub2.html">상세 우울검사</a></li>
+                            <li><a href="./sub2.html">검사 해석 가이드</a></li>
+                            <li><a href="./sub2.html">결과 기반 도움찾기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub1.html">사연작성</a>
+                        <ul class="submenu">
+                            <li><a href="./sub1.html">사연작성</a></li>
+                            <li><a href="./sub1.html">사연 모아보기</a></li>
+                            <li><a href="./sub1.html">전문가의 답장</a></li>
+                            <li><a href="./sub1.html">응원 메시지 남기기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub4.html">커뮤니티 & 참여</a>
+                        <ul class="submenu">
+                            <li><a href="./sub4.html">온라인 교육 과정</a></li>
+                            <li><a href="./sub4.html">FAQ</a></li>
+                            <li><a href="./sub4.html">홍보 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </header>
+    </header>
+
+    <section id="contents1">
+        <div class="container">
+            <section class="contents1">
+                <p class="title">우리가 알아야 할 대처 방법</p>
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-1.png" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-2.png" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-3.png" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-4.png" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-5.jfif" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-6.jfif" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-7.jfif" alt="img">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/con1-8.jfif" alt="img">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
+    <section id="contents2">
+        <div class="container">
+            <section class="contents2">
+                <p class="title">관련 법률/제도</p>
+                <div class="cont2-slick-container">
+                    <div>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/slideBanner1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/slideBanner2.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="./sub3_img/slideBanner3.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="contents3">
+        <div class="container">
+            <section class="contents3">
+                <p class="title">영상 자료실</p>
+                <div class="YouTube">
+                    <iframe class="YouTubeVideo" src="https://www.youtube.com/embed/PacpwDEzicI"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="infoText">
+                        <div class="title">
+                            <img src="./sub3_img/YoutubeVid1Logo.jpg" alt="Youtubelink">
+                            <span>정신과의사 뇌부자들</span>
+                        </div>
+                        <P>내 몸이 보내는 우울증 신호 3가지! 놓치지 마세요!</P>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="banner">
+        <section class="banner">
+            <!-- <p class="title">자살 예방 기본 지식</p> -->
+            <a href="javascript:;">
+                <img src="./sub3_img/suicidePrevBanner.png" alt="suicidePrevBanner" class="suicidePrevBanner">
+                <img src="./sub3_img/suicidePrevBanner-1280px.png" alt="suicidePrevBanner-1280px"
+                    class="suicidePrevBanner-1280px">
+            </a>
+        </section>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <footer class="footer">
+                <div class="f_logo">
+                    <a href="./index.html"><img src="./main_img/image 1.png" alt="푸터 로고 이미지"></a>
+                </div>
+                <div class="f_copy">
+                    Copyright &copy; 2025 Lumina. All rights reserved.<br>
+                    <span>
+                        당신의 삶은 소중합니다.<br>
+                        본 사이트는 개인용 포트폴리오 작품으로, 상업적 용도로 절대 사용되지 않습니다.<br>
+                        이미지 출처 : LottieFiles, 대덕구정신건강복지센터, 보건복지부, 1393, 한국생명의전화
+                    </span>
+                </div>
+            </footer>
+        </div><!-- //.container -->
+    </footer>
+
+
+
+
+
+    <!-- 제이쿼리 연결 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- 헤더 -->
+    <script>
+        //헤더
+        // 헤더 로그인 버튼 눌렀을 때 모듈창
+        const $modal = $("#modal");
+        const $openModalBtn = $("#openModalBtn");
+        const $closeModalBtn = $("#closeModalBtn");
+
+        $openModalBtn.on("click", function () {
+            $modal.removeClass("hidden");
+        });
+
+        $closeModalBtn.on("click", function () {
+            $modal.addClass("hidden");
+        });
+
+        $(window).on("click", function (e) {
+            if (e.target === $modal[0]) {
+                $modal.addClass("hidden");
+            }
+        });
+
+        //햄버거 메뉴를 클릭했을 때 나왔다가 들어가는 이벤트
+$("#barMenu").click(function () {
+  $(".nav .submenu").hide(); // 초기화
+  $(".header .nav").toggleClass("open");
+
+  if ($(".header .nav").hasClass("open")) {
+    $("body").css("overflow", "hidden");
+    $(".overlay").fadeIn();
+  } else {
+    $("body").css("overflow", "auto");
+    $(".overlay").fadeOut();
+  }
+});
+
+// 서브메뉴가 있는 li 클릭 시 서브메뉴 토글
+$(".nav > ul > li > a").click(function (e) {
+  e.preventDefault(); // 링크 이동 막기 (필요시)
+  const submenu = $(this).siblings(".submenu");
+  if (submenu.is(":visible")) {
+    submenu.slideUp();
+  } else {
+    $(".nav .submenu").slideUp(); // 다른 서브메뉴 닫기
+    submenu.slideDown();
+  }
+});
+
+        //contents2슬릭
+        $('.cont2-slick-container').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev"><img src="./sub3_img/arrow_R.png" alt=""></button>',
+            nextArrow: '<button type="button" class="slick-next"><img src="./sub3_img/arrow_R.png" alt=""></button>',
+            fade: true,
+            dots: false,
+        });
+    </script>
+</body>
+
+</html>

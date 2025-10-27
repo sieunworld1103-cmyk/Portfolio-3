@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/sub1/style.css">
+    <link rel="stylesheet" href="./css/sub1/media.css">
+</head>
+
+<body>
+    <header id="header">
+        <header class="header">
+            <h1 class="logo"><a href="index.html">LUMINA</a></h1>
+            <!-- 로그인 버튼 -->
+            <button id="openModalBtn">로그인 / 회원가입</button>
+
+            <!-- 로그인 모달 창 -->
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <span id="closeModalBtn" class="close">&times;</span>
+                    <h2>로그인</h2>
+                    <form>
+                        <div>
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" required />
+                        </div>
+                        <div class="password-row">
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" required />
+                        </div>
+                        <button type="submit">로그인</button>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">아이디 찾기</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">비밀번호 찾기</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="barMenu">
+                <div class="bar"></div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./sub3.html">정보 & 자료실</a>
+                        <ul class="submenu">
+                            <li><a href="./sub3.html">정보 & 자료실</a></li>
+                            <li><a href="./sub3.html">자가관리 가이드</a></li>
+                            <li><a href="./sub3.html">전문기관 링크</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub2.html">우울 척도검사</a>
+                        <ul class="submenu">
+                            <li><a href="./sub2.html">우울 척도검사</a></li>
+                            <li><a href="./sub2.html">상세 우울검사</a></li>
+                            <li><a href="./sub2.html">검사 해석 가이드</a></li>
+                            <li><a href="./sub2.html">결과 기반 도움찾기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub1.html">사연작성</a>
+                        <ul class="submenu">
+                            <li><a href="./sub1.html">사연작성</a></li>
+                            <li><a href="./sub1.html">사연 모아보기</a></li>
+                            <li><a href="./sub1.html">전문가의 답장</a></li>
+                            <li><a href="./sub1.html">응원 메시지 남기기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./sub4.html">커뮤니티 & 참여</a>
+                        <ul class="submenu">
+                            <li><a href="./sub4.html">온라인 교육 과정</a></li>
+                            <li><a href="./sub4.html">FAQ</a></li>
+                            <li><a href="./sub4.html">홍보 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </header>
+    </header>
+    <section id="content">
+        <div class="container">
+            <section class="content">
+                <h3>사연 게시판</h3>
+                <article>
+                    <a href="javascript:;">이야기 못했던 나의 사연을 올려주세요</a>
+                    <button id="writeStoryBtn" class="write-story-btn">사연작성</button>
+                </article>
+                <!-- 게시판 테이블 -->
+                <div class="notice">
+                    <table>
+                        <tr class="subject">
+                            <th class="number">번호</th>
+                            <th class="title">제목</th>
+                            <th class="date">작성일자</th>
+                        </tr>
+                        <tr class="line line1">
+                            <td class="noticebox">1</td>
+                            <td class="noticedetails"><a href="javascript:;">어디에도 이야기 못했던 나의 사연</a></td>
+                            <td class="noticedate">2025/07/28</td>
+                        </tr>
+                        <tr class="line line2">
+                            <td class="noticebox">2</td>
+                            <td class="noticedetails"><a href="javascript:;">너무 힘이 듭니다.</a></td>
+                            <td class="noticedate">2025/06/30</td>
+                        </tr>
+                        <tr class="line line3">
+                            <td class="noticebox">3</td>
+                            <td class="noticedetails"><a href="javascript:;">여기에 사연 쓸 수 있다고 들었어요.</a></td>
+                            <td class="noticedate">2025/05/31</td>
+                        </tr>
+                        <tr class="line line4">
+                            <td class="noticebox">4</td>
+                            <td class="noticedetails"><a href="javascript:;">힘든데 말할 곳도 없고ㅠㅠ</a></td>
+                            <td class="noticedate">2025/03/08</td>
+                        </tr>
+                        <tr class="line line5">
+                            <td class="noticebox">5</td>
+                            <td class="noticedetails"><a href="javascript:;">여러 사연들이 많네요</a></td>
+                            <td class="noticedate">2025/02/21</td>
+                        </tr>
+                        <tr class="line line6">
+                            <td class="noticebox">6</td>
+                            <td class="noticedetails"><a href="javascript:;">항상 어딘가에 말하고 싶었어요</a>
+                            </td>
+                            <td class="noticedate">2024/12/01</td>
+                        </tr>
+                        <tr class="line line7">
+                            <td class="noticebox2">7</td>
+                            <td class="noticedetails"><a href="javascript:;">만약에 내가 죽는다면?</a></td>
+                            <td class="noticedate">2024/08/07</td>
+                        </tr>
+                        <tr class="line line8">
+                            <td class="noticebox2">8</td>
+                            <td class="noticedetails"><a href="javascript:;">죽고싶지만 냉면은 먹고싶어</a></td>
+                            <td class="noticedate">2025/07/20</td>
+                        </tr>
+                        <tr class="line line9">
+                            <td class="noticebox2">9</td>
+                            <td class="noticedetails"><a href="javascript:;">사연 쓰러 왔어요.</a></td>
+                            <td class="noticedate">2025/06/19</td>
+                        </tr>
+                        <tr class="line line10">
+                            <td class="noticebox2">10</td>
+                            <td class="noticedetails"><a href="javascript:;">여러 사연들을 읽고 용기내어 써봅니다.</a></td>
+                            <td class="noticedate">2025/05/30</td>
+                        </tr>
+                        <tr class="line line11">
+                            <td class="noticebox2">11</td>
+                            <td class="noticedetails"><a href="javascript:;">저도 한번 써봐요!</a></td>
+                            <td class="noticedate">2025/04/03</td>
+                        </tr>
+                        <tr class="line line12">
+                            <td class="noticebox2">12</td>
+                            <td class="noticedetails"><a href="javascript:;">안녕하세요~</a>
+                            </td>
+                            <td class="noticedate">2025/04/01</td>
+                        </tr>
+                        <tr class="line line13">
+                            <td class="noticebox2">13</td>
+                            <td class="noticedetails"><a href="javascript:;">반갑습니다. 사연작성</a>
+                            </td>
+                            <td class="noticedate">2025/03/06</td>
+                        </tr>
+                        <tr class="line line14">
+                            <td class="noticebox">14</td>
+                            <td class="noticedetails"><a href="javascript:;">항상 보기만 하다가 나도 써봄</a>
+                            </td>
+                            <td class="noticedate">2025/03/07</td>
+                        </tr>
+                        <tr class="line line15">
+                            <td class="noticebox">15</td>
+                            <td class="noticedetails"><a href="javascript:;">오늘 부장님한테 열라 깨짐</a>
+                            </td>
+                            <td class="noticedate">2025/12/08</td>
+                        </tr>
+                        <tr class="line line16">
+                            <td class="noticebox">16</td>
+                            <td class="noticedetails"><a href="javascript:;">남자친구랑 헤어졌어요</a>
+                            </td>
+                            <td class="noticedate">2025/03/08</td>
+                        </tr>
+                        <tr class="line line17">
+                            <td class="noticebox">17</td>
+                            <td class="noticedetails"><a href="javascript:;">사랑하는 사람을 잃는 슬픔은 말로 표현할 수 없더군요</a>
+                            </td>
+                            <td class="noticedate">2025/03/09</td>
+                        </tr>
+                        <tr class="line line18">
+                            <td class="noticebox2">18</td>
+                            <td class="noticedetails"><a href="javascript:;">힘들어도 오늘도 힘내자</a>
+                            </td>
+                            <td class="noticedate">2025/03/10</td>
+                        </tr>
+                        <tr class="line line19">
+                            <td class="noticebox2">19</td>
+                            <td class="noticedetails"><a href="javascript:;">헤멘 곳이 내 땅이란 말이 있죠</a>
+                            </td>
+                            <td class="noticedate">2025/04/08</td>
+                        </tr>
+                        <tr class="line line20">
+                            <td class="noticebox2">20</td>
+                            <td class="noticedetails"><a href="javascript:;">살다보면 한번쯤은 이런날도 있는거지</a>
+                            </td>
+                            <td class="noticedate">2025/05/08</td>
+                        </tr>
+                        <tr class="line line21">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">괜찮아, 견딜수있어</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line22">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">힘들었던 내 이야기를 들어주세요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line23">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">괜찮지만 괜찮지 않아요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line24">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">오늘도 힘내보자</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line25">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">화이팅 합시다</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line26">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">사연 전하러 와보았습니다.</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line27">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">항상 행복할 수만은 없는거니까</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line28">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">오늘 병원에 등록했어요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line29">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">내가 과연 잘 할 수 있을까</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line30">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">늘 불안합니다.</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line31">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">매일 기억나는 그 날의 기억</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line32">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">나는 언제쯤 과거에서 벗어날 수 있는 걸까요?</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line33">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">남들은 행복하게 사는 것 같은데</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line34">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">나만 불행해 보여요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line35">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">자도자도 졸려요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line36">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">병원에서 약을 타왔는데 효과가 없어요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line37">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">질문 올려도 되나요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line38">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">안녕하세요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line39">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">무슨말부터 시작해야 할지</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line40">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">항상 생각하는 거지만</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line41">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">제 자신이 바보 같아요</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line42">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">괜찮아, 견딜수있어</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                        <tr class="line line43">
+                            <td class="noticebox2">21</td>
+                            <td class="noticedetails"><a href="javascript:;">사연 전하러 와보았습니다.</a>
+                            </td>
+                            <td class="noticedate">2025/06/08</td>
+                        </tr>
+                    </table>
+                    <div id="pagination" class="pagination"></div>
+                </div><!-- //.notice -->
+
+                <!-- 사연 작성: 개인정보 입력 팝업 -->
+                <div class="popup-layer" id="inputBox" style="display:none;">
+                    <div class="modal-content1">
+                        <h2>개인정보 입력</h2>
+                        <input type="text" id="inputName" placeholder="이름">
+                        <input type="text" id="inputEmail" placeholder="이메일">
+                        <input type="text" id="inputTitle" placeholder="사연 제목">
+                        <button id="nextBtn">다음</button>
+                        <button class="close-btn" id="closeInputBox">닫기</button>
+                    </div>
+                </div>
+                <!-- 사연 작성: 본문 입력 팝업 -->
+                <div class="popup-layer" id="storyBox" style="display:none;">
+                    <div class="modal-content2">
+                        <h2>사연 작성</h2>
+                        <textarea id="inputContent" rows="6" placeholder="당신의 사연을 남겨주세요."></textarea>
+                        <button id="submitBtn">제출</button>
+                        <button class="close-btn" id="closeStoryBox">닫기</button>
+                    </div>
+                </div>
+
+            </section>
+        </div><!-- //.container -->
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <footer class="footer">
+                <div class="f_logo">
+                    <a href="./index.html"><img src="./main_img/image 1.png" alt="푸터 로고 이미지"></a>
+                </div>
+                <div class="f_copy">
+                    Copyright &copy; 2025 Lumina. All rights reserved.<br>
+                    <span>
+                        당신의 삶은 소중합니다.<br>
+                        본 사이트는 개인용 포트폴리오 작품으로, 상업적 용도로 절대 사용되지 않습니다.<br>
+                        이미지 출처 : LottieFiles, 대덕구정신건강복지센터, 보건복지부, 1393, 한국생명의전화
+                    </span>
+                </div>
+            </footer>
+        </div><!-- //.container -->
+    </footer>
+
+    <!-- 사연 상세보기 팝업 -->
+    <div class="popup-layer" id="viewStoryBox" style="display:none;">
+        <div class="modal-content3">
+            <h2 id="viewStoryTitle">사연 제목</h2>
+            <p id="viewStoryContent" style="margin-top: 15px; white-space: pre-wrap;"></p>
+            <p id="viewStoryMeta" style="font-size: 12px; color: gray;"></p>
+            <button class="close-btn" id="closeViewStory" style="margin-top: 10px;">닫기</button>
+        </div>
+    </div>
+
+
+    <!-- 제이쿼리 연결 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        //헤더
+
+        // 헤더 로그인 버튼 눌렀을 때 모듈창
+        const $modal = $("#modal");
+        const $openModalBtn = $("#openModalBtn");
+        const $closeModalBtn = $("#closeModalBtn");
+
+        // 로그인 모달 열기
+        $openModalBtn.on("click", function () {
+            $modal.removeClass("hidden");
+        });
+
+        // 로그인 모달 닫기
+        $closeModalBtn.on("click", function () {
+            $modal.addClass("hidden");
+        });
+
+        // 모달 외부 클릭해도 닫아주는 명령어
+        $(window).on("click", function (e) {
+            if (e.target === $modal[0]) {
+                $modal.addClass("hidden");
+            }
+        });
+
+        //햄버거 메뉴를 클릭했을 때 나왔다가 들어가는 이벤트
+$("#barMenu").click(function () {
+  $(".nav .submenu").hide(); // 초기화
+  $(".header .nav").toggleClass("open");
+
+  if ($(".header .nav").hasClass("open")) {
+    $("body").css("overflow", "hidden");
+    $(".overlay").fadeIn();
+  } else {
+    $("body").css("overflow", "auto");
+    $(".overlay").fadeOut();
+  }
+});
+
+// 서브메뉴가 있는 li 클릭 시 서브메뉴 토글
+$(".nav > ul > li > a").click(function (e) {
+  e.preventDefault(); // 링크 이동 막기 (필요시)
+  const submenu = $(this).siblings(".submenu");
+  if (submenu.is(":visible")) {
+    submenu.slideUp();
+  } else {
+    $(".nav .submenu").slideUp(); // 다른 서브메뉴 닫기
+    submenu.slideDown();
+  }
+});
+
+
+        // 컨텐츠
+        $(function () {
+            let tempUser = {}; // 임시 사용자 정보 저장
+            let storyList = []; // 작성된 사연 목록
+            let count = 1; // 사연 ID 증가값
+
+            // [1] '사연작성' 버튼 클릭 시 개인정보 입력창 열기
+            $('#writeStoryBtn').on('click', function () {
+                $('#inputBox').fadeIn();
+            });
+
+            // [2] '다음' 버튼 클릭 시 사용자 정보 확인 후 사연 입력창 열기
+            $('#nextBtn').on('click', function () {
+                const name = $('#inputName').val().trim();
+                const email = $('#inputEmail').val().trim();
+                const title = $('#inputTitle').val().trim();
+
+                if (!name || !email || !title) {
+                    alert("모든 항목을 입력해주세요.");
+                    return;
+                }
+
+                tempUser = { name, email, title };
+                $('#inputBox').fadeOut(function () {
+                    $('#storyBox').fadeIn();
+                });
+            });
+
+            // [3] '제출' 버튼 클릭 시 사연 저장 및 테이블에 추가
+            $('#submitBtn').on('click', function () {
+                const content = $('#inputContent').val().trim();
+                if (!content) {
+                    alert("사연 내용을 입력해주세요.");
+                    return;
+                }
+
+                // 이름 마스킹 처리 (예: 홍길동 → 홍**)
+                const maskedName = tempUser.name[0] + '*'.repeat(tempUser.name.length - 1);
+                const now = new Date();
+                const date = `${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')}`;
+
+                const storyData = {
+                    id: count,
+                    title: tempUser.title,
+                    content: content,
+                    date: date,
+                    author: maskedName
+                };
+                // 사연 목록에 저장
+                storyList.unshift(storyData);
+
+                // 테이블에 새로운 줄 추가
+                const newRow = `
+    <tr class="line" data-id="${storyData.id}">
+        <td class="noticebox">●</td>
+        <td class="noticedetails"><a href="javascript:;">${storyData.title}</a></td>
+        <td class="noticedate">${storyData.date}</td>
+    </tr>
+`;
+
+                // 테이블의 제목 행(tr.subject) 바로 아래에 새 사연 행(newRow)을 추가하여 화면에 최신 사연을 표시함
+                // 사연 ID를 하나 증가시켜 다음 등록 시 고유 번호로 사용하기 위해 count++ 실행
+                // 사연 등록의 핵심 메서드!!!!!
+
+                $('.notice table tr.subject').after(newRow);
+                count++;
+
+                // 입력값 초기화 및 모달 닫기
+                $('#inputName, #inputEmail, #inputTitle, #inputContent').val('');
+                $('#storyBox').fadeOut();
+            });
+
+            // [4] 제목 클릭 시 내용 보기 팝업
+            $('.notice table').on('click', 'tr.line', function () {
+                const id = $(this).data('id');
+                const story = storyList.find(item => item.id === id);
+                if (!story) return;
+
+                $('#viewStoryTitle').text(story.title);
+                $('#viewStoryContent').text(story.content);
+                $('#viewStoryMeta').text(`작성자: ${story.author} | 작성일: ${story.date}`);
+                $('#viewStoryBox').fadeIn();
+            });
+
+            // [5] 각종 팝업 닫기 버튼
+            $('#closeInputBox').on('click', function () {
+                $('#inputBox').fadeOut();
+            });
+
+            $('#closeStoryBox').on('click', function () {
+                $('#storyBox').fadeOut();
+            });
+
+            $('#closeViewStory').on('click', function () {
+                $('#viewStoryBox').fadeOut();
+            });
+        });
+
+        //자바스크립트 페이지네이션
+        document.addEventListener("DOMContentLoaded", function () {
+            const rowsPerPage = 20; // 페이지당 표시할 공지 수
+            const rows = document.querySelectorAll(".notice table tr.line");
+            const pagination = document.getElementById("pagination");
+            const pageCount = Math.ceil(rows.length / rowsPerPage);
+
+            let currentPage = 1;
+
+            function displayPage(page) {
+                // 모든 row 숨기기
+                rows.forEach(row => row.style.display = "none");
+
+                // 현재 페이지의 row만 표시
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+                for (let i = start; i < end && i < rows.length; i++) {
+                    rows[i].style.display = "table-row";
+                }
+            }
+
+            function setupPagination() {
+                pagination.innerHTML = ""; // 기존 버튼 제거
+
+                for (let i = 1; i <= pageCount; i++) {
+                    const btn = document.createElement("button");
+                    btn.innerText = i;
+                    btn.className = (i === currentPage) ? "active" : "";
+                    btn.addEventListener("click", () => {
+                        currentPage = i;
+                        displayPage(currentPage);
+                        updateButtons();
+                    });
+                    pagination.appendChild(btn);
+                }
+            }
+
+            function updateButtons() {
+                const buttons = pagination.querySelectorAll("button");
+                buttons.forEach((btn, index) => {
+                    btn.className = (index + 1 === currentPage) ? "active" : "";
+                });
+            }
+
+            // 초기 실행
+            displayPage(currentPage);
+            setupPagination();
+        });
+
+
+    </script>
+</body>
+
+</html>

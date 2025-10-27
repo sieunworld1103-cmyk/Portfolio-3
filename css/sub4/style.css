@@ -1,0 +1,614 @@
+@charset "utf-8";
+
+/* layout */
+body,html{
+    overflow-x: hidden;
+}
+
+/* container */
+.container {
+    width: 1280px;
+    height: inherit;
+    margin: 0 auto;
+}
+
+/* header */
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EDF6FC;
+}
+
+.header {
+    height: inherit;
+    position: relative;
+}
+
+.header .logo {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 100px;
+    font-family: 'GounBatangBold';
+    letter-spacing: 2.5px;
+    font-size: clamp(32px, 3.125vw, 72px);
+    font-weight: 400;
+}
+
+.header .logo a {
+    color: #555;
+}
+
+/* 로그인/회원가입 버튼 */
+#openModalBtn {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 18px;
+    font-family: 'GounBatang';
+    cursor: pointer;
+    color: #333;
+}
+
+/* 모달 배경 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 초기 상태: 보이게 */
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+    z-index: 1000;
+}
+
+/* 숨김 처리 (트랜지션 적용 가능하도록 수정) */
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+}
+
+/* 모달 내부 콘텐츠 박스 */
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 90%;
+
+    /* 아래로 내려오는 효과 (옵션) */
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* 모달이 숨겨질 때 콘텐츠 위치 위로 이동 */
+.modal.hidden .modal-content {
+    transform: translateY(-30px);
+}
+
+/* 제목 */
+.modal-content h2 {
+    font-family: 'GounBatangBold';
+}
+
+/* 폼 전체 마진 */
+.modal-content form {
+    margin-top: 30px;
+}
+
+/* 기본 div: 라벨 + 인풋 가로 정렬 */
+.modal-content form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 라벨 스타일 */
+.modal-content form label {
+    width: 80px;
+    margin-right: 10px;
+    font-family: 'GounBatang';
+}
+
+/* 인풋 공통 스타일 */
+.modal-content form input {
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* 비밀번호 행: 라벨과 인풋 가로 정렬 */
+.password-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 로그인 버튼은 비밀번호 div 밖으로 빼는 구조에 맞춤 */
+button[type="submit"] {
+    width: 100%;
+    height: 35px;
+    font-family: 'GounBatang';
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 닫기 버튼 (X) */
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* 하단 메뉴 리스트 */
+.modal-content ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.modal-content ul li {
+    position: relative;
+    padding: 0 10px;
+}
+
+/* 메뉴 항목 사이 구분선 */
+.modal-content ul li::after {
+    content: "";
+    width: 1px;
+    height: 16px;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    background-color: #5e5e5e;
+}
+
+.modal-content ul li:first-child::after {
+    content: none;
+}
+
+.modal-content ul li a {
+    font-family: 'GounBatang';
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+#barMenu {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 35px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#barMenu>.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #666;
+    position: relative;
+    border-radius: 500px;
+}
+
+#barMenu>.bar::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background-color: #666;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transition: all 0.3s;
+    border-radius: 500px;
+}
+
+#barMenu:hover>.bar::after {
+    width: 100%;
+}
+
+#barMenu>.bar::before {
+    content: "";
+    width: 60%;
+    height: 3px;
+    background-color: #666;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    transition: all 0.3s;
+    border-radius: 500px;
+}
+
+#barMenu:hover>.bar::before {
+    width: 100%;
+}
+
+.header .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: auto;
+    background-color: white;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.header .nav.open {
+    right: 0;
+}
+
+.header .nav>ul {
+    padding-top: 80px;
+}
+
+.header .nav>ul>li {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    padding: 15px 0;
+}
+
+.header .nav>ul>li>a {
+    display: block;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'GounBatangBold';
+}
+
+.header .nav ul li .submenu {
+    top: auto;
+    left: auto;
+    width: 100%;
+    background-color: #f8f8f8;
+    display: none;
+    padding-left: 20px;
+}
+
+.header .nav ul li .submenu li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.header .nav ul li .submenu li:last-child {
+    border-bottom: none;
+}
+
+.header .nav ul li .submenu li a {
+    display: block;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    font-family: 'GounBatang';
+}
+/* 오버레이 (기본적으로 숨김) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.473); /* 반투명 검정 배경 */
+  z-index: 998; /* nav보다 아래 */
+  display: none;
+}
+
+
+/* banner */
+#banner {
+    width: 100%;
+    margin-bottom: 10vh;
+}
+
+#banner .container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 비디오 기본 */
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner video {
+    display: block;
+    width: 100%;
+    /* 부모 폭에 맞춰 줄어듦 */
+    height: auto;
+    /* 비율 유지 */
+    max-width: 100%;
+    /* 부모 넘치지 않게 */
+    object-fit: contain;
+    /* 필요 시 cover로 변경 */
+}
+
+/* conents1 */
+#contents1 {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+#contents1 .container {
+    display: flex;
+    /* 가로 정렬 */
+    justify-content: space-around;
+    /* 가로 간격 균등 */
+    align-items: flex-start;
+    /* 세로 기준 상단 */
+    flex-wrap: wrap;
+}
+
+.box{}
+
+#contents1 .title {
+    width: 100%;
+    border-bottom: 2px solid #555;
+    font-size: 40px;
+    color: #222;
+    font-weight: 600;
+    font-family: 'GounBatangBold';
+    margin-bottom: 30px;
+}
+
+#contents1 .title span {
+    width: 100%;
+    text-align: end;
+    color: #555;
+    font-size: 15px;
+}
+
+
+#contents1 .img_box {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#contents1 .text_box {
+    width: 100%;
+    font-family: 'GounBatangBold';
+    white-space: normal;
+}
+
+#contents1 .text_tit {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+    color: #111;
+}
+
+#contents1 .text_box span {
+    width: 100%;
+    display: flex;
+    padding: 5px 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#contents1 .text_box span strong {
+    font-weight: 600;
+    color: #111;
+}
+
+/* contents2 */
+#contetns2 {}
+
+.contetns2 {}
+
+.title {
+    width: 100%;
+    font-size: 40px;
+    color: #222;
+    font-weight: 600;
+    font-family: 'GounBatangBold';
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-bottom: 2px solid #555;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto;
+}
+
+.acc-item+.acc-item {
+    margin-top: 12px;
+}
+
+.acc-toggle {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding: 16px 48px 16px 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease;
+    font-family: 'GounBatangBold';
+
+}
+
+.acc-toggle:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.acc-toggle:focus-visible {
+    outline: 2px solid #9FD1D0;
+    /* 사용자 팔레트 색상 */
+    outline-offset: 2px;
+}
+
+/* 아이콘 +/– */
+.acc-toggle::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform .2s ease;
+}
+
+.acc-toggle[aria-expanded="true"]::after {
+    content: "–";
+    /* 열린 상태에서 마이너스 표시 */
+}
+
+/*  패널  */
+.acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    background: #fff;
+    border: 1px solid transparent;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    font-family: 'GounBatang';
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.acc-panel ul {}
+
+.acc-panel ul li {
+    padding: 2px 20px;
+    margin: 0;
+    color: #3A4151;
+}
+
+.acc-toggle[aria-expanded="true"]+.acc-panel {
+    border-color: #d1d5db;
+}
+
+.acc-panel p {
+    padding: 12px 20px;
+    margin: 0;
+    color: #3A4151;
+    line-height: 1.6;
+}
+
+.acc-panel p+p {
+    margin-top: 6px;
+}
+
+/* contents3 */
+#contents3{}
+
+.contents3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contents3 h3 {
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #555;
+    font-size: 35px;
+    color: #222;
+    font-family: 'GounBatang';
+}
+
+.contents3 .video_box {
+    width: 48%;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+.contents3 .video_box iframe {
+    display: block;
+    width: 100%;
+    height: 360px;
+    border: 0;
+}
+
+.contents3 h4 {
+    width: 100%;
+    padding-bottom: 10px;
+    margin: 20px 0;
+    border-bottom: 1px solid #999;
+    font-size: 20px;
+    color: #222;
+    font-family: 'GounBatang';
+}
+
+.contents3 p {
+    font-size: 18px;
+    color: #222;
+    font-family: 'GounBatang';
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 20.83vw;
+    background-color: #2C519D;
+}
+
+.footer {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.footer .f_logo {
+    width: 22vw;
+    height: 8vw;
+    margin: 0 auto;
+}
+
+.footer .f_logo a {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .f_logo a img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .f_copy {
+    color: white;
+    text-align: center;
+    line-height: 2;
+    margin-top: 30px;
+    font-size: clamp(13px, 0.8vw, 18px);
+}
+
+.footer .f_copy span {}
